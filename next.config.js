@@ -11,4 +11,7 @@ if (isGithubActions) {
 
 module.exports = {
   assetPrefix: assetPrefix,
+  images: {
+    unoptimized: true,
+  },
 };

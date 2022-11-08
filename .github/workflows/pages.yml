@@ -15,10 +15,13 @@ jobs:
         with:
           node-version: 16
           cache: npm
+      - name: install
+        run: npm install
       - name: build
         run: |
-          npm install
+          npm ci
           npm run build
+          npm run export
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
