@@ -1,12 +1,10 @@
 const isGithubActions = process.env.GITHUB_ACTIONS || false;
-
 let assetPrefix = "/";
 
 if (isGithubActions) {
-  // trim off `<owner>/`
-  const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, "");
-
+  const repo = process.env.GITHUB_REPOSITORY;
   assetPrefix = `/${repo}/`;
+  console.log(repo);
 }
 
 module.exports = {
