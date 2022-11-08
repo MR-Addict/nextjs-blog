@@ -22,10 +22,9 @@ export default function Home({ allPostsData }) {
       </Head>
       {/* Keep the existing code here */}
       <section className={utilStyles.headingMd}>
-        <p>I'm an undergraduate sutdent at Njtech University.</p>
         <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href='https://nextjs.org/learn'>our Next.js tutorial</a>.)
+          I'm an undergraduate sutdent at Njtech University. This blog page is a learning app follwed by
+          <a href='https://nextjs.org/learn'> nextjs offical example.</a>
         </p>
       </section>
       {/* Add this <section> tag below the existing <section> tag */}
