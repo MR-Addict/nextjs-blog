@@ -7,11 +7,21 @@ import Link from "next/link";
 const name = "MR-Addict";
 export const siteTitle = "Next.js Sample Website";
 
+const getBasePath = () => {
+  let basePath = "";
+  if (process.env.GITHUB_ACTIONS) {
+    const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, "");
+    basePath = `/${repo}`;
+  }
+  return basePath;
+};
+
 export default function Layout({ children, home }) {
+  const basePath = getBasePath();
   return (
     <div className={styles.container}>
       <Head>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href={`${basePath}/favicon.ico`} />
         <meta name='description' content='Learn how to build a personal website using Next.js' />
         <meta
           property='og:image'
@@ -27,7 +37,7 @@ export default function Layout({ children, home }) {
           <>
             <Image
               priority
-              src='/images/avatar.png'
+              src={`${basePath}/images/avatar.png`}
               className={utilStyles.borderCircle}
               height={144}
               width={144}
@@ -39,7 +49,7 @@ export default function Layout({ children, home }) {
           <>
             <Image
               priority
-              src='/images/avatar.png'
+              src={`${basePath}/images/avatar.png`}
               className={utilStyles.borderCircle}
               height={108}
               width={108}
